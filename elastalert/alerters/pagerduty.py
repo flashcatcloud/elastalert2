@@ -33,9 +33,9 @@ class PagerDutyAlerter(Alerter):
         self.pagerduty_v2_payload_include_all_info = self.rule.get('pagerduty_v2_payload_include_all_info', True)
 
         if self.pagerduty_api_version == 'v2':
-            self.url = 'https://events.pagerduty.com/v2/enqueue'
+            self.url = 'https://api.flashcat.cloud/event/push/alert/pagerduty?channel_id=yyy'
         else:
-            self.url = 'https://events.pagerduty.com/generic/2010-04-15/create_event.json'
+            self.url = 'https://api.flashcat.cloud/event/push/alert/pagerduty?channel_id=yyy'
 
     def alert(self, matches):
         body = self.create_alert_body(matches)
